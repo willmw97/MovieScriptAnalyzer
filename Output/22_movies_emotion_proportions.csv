@@ -1,0 +1,23 @@
+﻿Movie_Name,Genre,Movie,Sadness,Disgust,Anger,Fear,Anticipation,Joy ,Trust
+Action_Batman.txt,Action,Batman.txt,9.94,7.15,11.49,16.67,11.61,14.23,14.73
+Action_Fight-Club.txt,Action,Fight-Club.txt,11.56,7.93,13.75,17.2,13.37,10.59,17
+Adventure_Avatar.txt,Adventure,Avatar.txt,12.59,9.16,14.19,19.5,12.13,8.4,15.36
+Adventure_Dances-with-Wolves.txt,Adventure,Dances-with-Wolves.txt,10.21,6.09,16.36,13.1,14.34,11,20.11
+Comedy_Austin-Powers---The-Spy-Who-Shagged-Me.txt,Comedy,Austin-Powers---The-Spy-Who-Shagged-Me.txt,15.72,13.13,13,15.32,9.38,12.27,13.21
+Comedy_Horrible-Bosses.txt,Comedy,Horrible-Bosses.txt,12.72,10.55,11.92,14.97,15.94,10.78,15.23
+Crime_Fargo.txt,Crime,Fargo.txt,8.65,5.84,10.71,11.11,17.64,12.77,23.08
+Crime_American-History-X.txt,Crime,American-History-X.txt,13.76,10.12,13.43,13.83,13.4,11.6,15.92
+Family_Happy-Fee.txt,Family,Happy-Fee.txt,11.92,6.18,8.3,12.08,19.82,14.7,18.76
+Family_Shrek.txt,Family,Shrek.txt,6.49,23.25,6.58,14.27,13.31,12.98,14.41
+"Fantasy_Butterfly-Effect,-The.txt",Fantasy,"Butterfly-Effect,-The.txt",13.85,9.99,11.53,15.01,13.63,11.18,15.17
+Fantasy_Star-Wars-The-Force-Awakens.txt,Fantasy,Star-Wars-The-Force-Awakens.txt,11.43,6.67,15.45,19.07,12.53,7.8,18.18
+Horror_Scream-2.txt,Horror,Scream-2.txt,11.24,8.86,13.17,18.96,13.87,9.61,15.18
+"Horror_Shining,-The.txt",Horror,"Shining,-The.txt",9.86,6.3,8.42,10.89,17.95,13.42,23.56
+Romance_Midnight-in-Paris.txt,Romance,Midnight-in-Paris.txt,11.36,7.14,7.79,9.89,15.98,20.26,18.03
+Romance_Twilig.txt,Romance,Twilig.txt,11.56,6.87,10.33,14.03,14.66,13.43,18.12
+SciFi_Alien.txt,SciFi,Alien.txt,14.39,13.4,7.6,18.71,18.62,6.14,15.76
+SciFi_Men-in-Black.txt,SciFi,Men-in-Black.txt,10.81,12.72,11.92,20.38,13,8.15,16.15
+Thriller_Eagle-Eye.txt,Thriller,Eagle-Eye.txt,10.39,7.36,12.16,17.65,13.9,9.32,20.38
+"Thriller_Hunt-for-Red-October,-The.txt",Thriller,"Hunt-for-Red-October,-The.txt",11.07,6.67,13.72,17.59,16.51,6.67,19.31
+War_Inglourious-Basterds.txt,War,Inglourious-Basterds.txt,11.38,6.47,10.82,14.75,15.33,12.44,19.4
+War_Saving-Private-Ryan.txt,War,Saving-Private-Ryan.txt,10.89,7.46,12.94,19.28,12.28,8.22,21.66
