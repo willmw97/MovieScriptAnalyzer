@@ -1,3 +1,5 @@
+# Author: Marshal J. Will
+
 # Movie Script Unsupervised Learning Methods Analyses
 
 - detailes in the power point presentation (Movie Scripts.pptx) and word document report (Analysis of Movie Scripts.docx)
