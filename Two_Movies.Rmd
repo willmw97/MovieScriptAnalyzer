@@ -1,0 +1,134 @@
+---
+title: "Two-Movies"
+author: "Mikolaj Wieczorek"
+date: "12/12/2019"
+output: word_document
+---
+
+Generating most frequent words for the two chosen movies and creating word clouds for them.
+
+```{r}
+library(tm)
+library(proxy)
+#library(RTextTools)
+library(fpc)   
+library(wordcloud)
+library(stringi)
+library(devtools)
+library(ggplot2)
+library(FactoMineR)
+library(factoextra)
+library(FactoInvestigate)
+library(MASS)
+library(lattice)
+library(mixOmics)
+library(cluster)
+library(dplyr)
+library(tidyr)
+library(data.table)
+library(arules)
+library(arulesViz)
+library(gplots)
+library(RColorBrewer)
+
+```
+
+
+```{r}
+path_one = "~/OneDrive - MNSCU/myGithub/Unsupervised_Learning/Movie-Script-Unsupervised-Learning-Methods-Analyses/One_movie"
+dir_1 = DirSource(paste(path_one, sep=""), encoding = "UTF-8")
+corpus_1 = Corpus(dir_1)
+head(summary(corpus_1))
+```
+```{r}
+path_second = "~/OneDrive - MNSCU/myGithub/Unsupervised_Learning/Movie-Script-Unsupervised-Learning-Methods-Analyses/Second_movie"
+dir_2 = DirSource(paste(path_second, sep=""), encoding = "UTF-8")
+corpus_2 = Corpus(dir_2)
+head(summary(corpus_2))
+```
+
+```{r}
+ndocs <- length(corpus_1)
+# ignore extremely rare words i.e. terms that appear in less then 1% of the documents
+minTermFreq <- ndocs * 0.05
+# ignore overly common words i.e. terms that appear in more than 50% of the documents
+maxTermFreq <- ndocs * .5
+dtm_1 = DocumentTermMatrix(corpus_1,
+                         control = list(
+                           stopwords = ("en"), 
+                           wordLengths=c(5, 15),
+                           removePunctuation = T,
+                           removeNumbers = T
+                           #stemming = T,
+                           #removeWords("bateman"),
+                           #bounds = list(global = c(minTermFreq, maxTermFreq))
+                         ))
+```
+
+```{r}
+ndocs <- length(corpus_2)
+# ignore extremely rare words i.e. terms that appear in less then 1% of the documents
+minTermFreq <- ndocs * 0.05
+# ignore overly common words i.e. terms that appear in more than 50% of the documents
+maxTermFreq <- ndocs * .5
+dtm_2 = DocumentTermMatrix(corpus_2,
+                         control = list(
+                           stopwords = ("end"), 
+                           wordLengths=c(5, 15),
+                           removePunctuation = T,
+                           removeNumbers = T
+                           #stemming = T,
+                           #removeWords("bateman"),
+                           #bounds = list(global = c(minTermFreq, maxTermFreq))
+                         ))
+```
+
+
+### Two movies
+```{r}
+#Clustering words
+tdm_1 = t(dtm_1)
+tdm_2 = t(dtm_2)
+#Removing sparse terms
+tdm_no_sparse_1 = removeSparseTerms(tdm_1, sparse = .99)
+tdm.mat_1  <- as.matrix(tdm_no_sparse_1)
+tdm_no_sparse_2 = removeSparseTerms(tdm_2, sparse = .99)
+tdm.mat_2  <- as.matrix(tdm_no_sparse_2)
+```
+
+
+```{r}
+#First 20 most frequent words for Move#1
+word.freq_1 = sort(rowSums(tdm.mat_1), decreasing = T)
+barplot(word.freq_1[1:20], cex.names = .8)
+#Next 20 most frequent words
+barplot(word.freq_1[21:40], cex.names = .8)
+#Next 20 most frequent words
+barplot(word.freq_1[41:60], cex.names = .8)
+```
+
+```{r echo=TRUE}
+dim(tdm.mat_1)
+#Word Cloud for Movie#1
+wordcloud(words = names(word.freq_1[4:2376]), freq = word.freq_check, min.freq = 100, col = rainbow(1000), max.words = 50)
+```
+
+
+```{r echo=TRUE}
+#First 20 most frequent words for Movie#2
+word.freq_2 = sort(rowSums(tdm.mat_2), decreasing = T)
+barplot(word.freq_2[4:20], cex.names = .8)
+#Next 20 most frequent words
+barplot(word.freq_2[21:40], cex.names = .8)
+#Next 20 most frequent words
+barplot(word.freq_2[41:60], cex.names = .8)
+```
+
+```{r echo=TRUE}
+dim(tdm.mat_2)
+#Word Cloud for Movie#2
+wordcloud(words = names(word.freq_2[4:2544]), freq = word.freq_check, min.freq = 100, col = rainbow(1000), max.words = 50)
+```
+
+
+
